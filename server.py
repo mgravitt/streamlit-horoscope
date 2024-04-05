@@ -28,7 +28,10 @@ def main():
             template="""
             Identify the astrological symbol for the date of birth {month} {day}.
             Write a very short horoscope for the astrological symbol.
-            Include advice for the topic of {category}
+            Include advice for the topic of {category}.
+            Limit the horoscope to 75 words or less.
+            It's ok to include emojis in the horoscope. 
+            Do not include hash tags or words that start with #.
             """,
             input_variables=["month", "day", "category"]
         )
