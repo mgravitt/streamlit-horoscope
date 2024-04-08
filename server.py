@@ -26,10 +26,13 @@ def main():
 
         horoscope_prompt = PromptTemplate(
             template="""
+            You are an expert in Vedic astrology.
             Identify the astrological symbol for the date of birth {month} {day}.
+            Today is not the user's birthday.
             Write a very short horoscope for the astrological symbol.
             Include advice for the topic of {category}.
-            Limit the horoscope to 75 words or less.
+            Limit the horoscope to 100 words or less in 2 paragraphs.
+            Reference the planetary location and how that has an impact on the horoscope.
             It's ok to include emojis in the horoscope. 
             Do not include hash tags or words that start with #.
             """,
@@ -52,7 +55,5 @@ def main():
         st.write(f"Month: {month}, Day: {day}, Category: {category}")
         st.write(result["horoscope"])
         
-        # Here, you can add logic to fetch or generate advice based on the selected values
-
 if __name__ == "__main__":
     main()
